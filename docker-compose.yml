@@ -10,24 +10,24 @@ services:
       - ./orthanc.json:/etc/orthanc/orthanc.json
       - ./filedb/:/var/lib/orthanc/db/
     depends_on:
-      - postgres
+      - mariadb
     
-  postgres:
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: orthanc
-      POSTGRES_PASSWORD: test1234
-      POSTGRES_DB: orthancdb
-    ports:
-      - "5440:5432"
-    volumes:
-      - ./postgresdb/:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
+  mariadb:
+      image: mariadb:latest
+      environment:
+        MYSQL_ROOT_PASSWORD: rootpassword
+        MYSQL_DATABASE: orthancdb
+      ports:
+        - "3300:3306"
+      volumes:
+        - ./mysqldb:/var/lib/mysql
+      healthcheck:
+        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
+    
+    
+
 
   ohif_viewer:
     image: ohif/viewer

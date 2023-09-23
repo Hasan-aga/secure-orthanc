@@ -52,18 +52,14 @@
   // folders, in which case they will be scanned non-recursively to
   // find shared libraries. Backslashes must be either escaped by
   // doubling them, or replaced by forward slashes "/".
-  "PostgreSQL" : {
-    "EnableIndex" : true,
-    "EnableStorage" : true,
-    "Host" : "postgres",
-    "Port" : 5432,
-    "Database" : "orthancdb",
-    "Username" : "orthanc",
-    "Password" : "test1234",
-    "EnableSsl" : false,               // New in release 3.0
-    "MaximumConnectionRetries" : 10,   // New in release 3.0
-    "ConnectionRetryInterval" : 5,     // New in release 3.0
-    "IndexConnectionsCount" : 1        // New in release 4.0
+  "MySQL": {
+    "EnableIndex": true,
+    "EnableStorage": true,
+    "Host": "mariadb",
+    "Port": 3306,
+    "Database": "orthancdb",
+    "Username": "root",
+    "Password": "rootpassword"
   },
   "Plugins" : [ 
     "/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"
