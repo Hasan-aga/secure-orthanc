@@ -21,7 +21,7 @@ services:
     ports:
       - "6000:5432"
     volumes:
-      - ./postgres_data/:/var/lib/postgresql/data
+      - ./postgresdb/:/var/lib/postgresql/data
 
   ohif_viewer:
     image: ohif/viewer
