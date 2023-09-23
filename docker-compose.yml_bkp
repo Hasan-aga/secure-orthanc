@@ -1,0 +1,26 @@
+version: "3"
+services:
+  pacs:
+    image: jodogne/orthanc-plugins
+    restart: always
+    ports:
+      - 8042:8042
+      - 4242:4242
+      - 2000:2000
+    volumes:
+      - ./orthanc.json:/etc/orthanc/orthanc.json:ro
+      - /media/hdd/orthanc/db/:/var/lib/orthanc/db/
+
+  ohif_viewer:
+    image: ohif/viewer
+    ports:
+      - 3000:80
+    environment: 
+      - APP_CONFIG:/usr/share/nginx/html/app-config.js
+    volumes:
+      - ./nginx_ohif.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ohif.js:/usr/share/nginx/html/app-config.js:ro
+      - ./logo.png:/usr/share/nginx/html/logo.png:ro
+  
+volumes: 
+  orthanc_db:
