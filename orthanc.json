@@ -55,8 +55,8 @@
   "PostgreSQL" : {
     "EnableIndex" : true,
     "EnableStorage" : true,
-    "Host" : "localhost",
-    "Port" : 6000,
+    "Host" : "postgres",
+    "Port" : 5432,
     "Database" : "orthancdb",
     "Username" : "orthanc",
     "Password" : "test1234",
@@ -66,9 +66,7 @@
     "IndexConnectionsCount" : 1        // New in release 4.0
   },
   "Plugins" : [ 
-    "/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins", 
-    "/plugins/BuildPostgreSQL/libOrthancPostgreSQLIndex.so",
-    "/plugins/BuildPostgreSQL/libOrthancPostgreSQLStorage.so"
+    "/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"
   ],
 
   // Maximum number of processing jobs that are simultaneously running
