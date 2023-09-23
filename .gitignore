@@ -1,0 +1,3 @@
+plugins/*
+filedb/*
+postgres_data/*
