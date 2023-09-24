@@ -64,6 +64,24 @@
   "Plugins" : [ 
     "/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"
   ],
+  "DicomWeb" : {
+    "Enable" : true,                
+    "Root" : "/dicom-web/",         
+    "EnableWado" : true,           
+    "WadoRoot" : "/wado",           
+    "Ssl" : false,                  
+    "QidoCaseSensitive" : true,     
+    "Host" : "",                    
+
+    "StudiesMetadata" : "Full",     
+    "SeriesMetadata" : "Full",      
+    "EnableMetadataCache": true,    
+    "MetadataWorkerThreadsCount": 4,
+    "PublicRoot": "/dicom-web/"                                        
+                                
+                                    
+                                    
+  },
 
   // Maximum number of processing jobs that are simultaneously running
   // at any given time. A value of "0" indicates to use all the

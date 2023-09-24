@@ -11,6 +11,8 @@ services:
       - ./filedb/:/var/lib/orthanc/db/
     depends_on:
       - mariadb
+    environment:
+      DICOM_WEB_PLUGIN_ENABLED: "true"
     
   mariadb:
       image: mariadb:latest
@@ -33,7 +35,6 @@ services:
 
   ohif_viewer:
     image: ohif/viewer
-    container_name: ohif_regresyon
     ports:
       - 4000:80
     environment: 
@@ -42,4 +43,6 @@ services:
       - ./nginx_ohif.conf:/etc/nginx/conf.d/default.conf:ro
       - ./ohif.js:/usr/share/nginx/html/app-config.js:ro
       - ./logo.png:/usr/share/nginx/html/logo.png:ro
+    depends_on:
+      - orthanc
  
