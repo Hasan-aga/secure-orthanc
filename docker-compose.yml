@@ -12,7 +12,16 @@ services:
     depends_on:
       - mariadb
     environment:
+      VERBOSE_STARTUP: "true"
+      #VERBOSE_ENABLED: "true"
+
+      # you must enable the StoneViewer and the DicomWeb plugins
+      STONE_WEB_VIEWER_PLUGIN_ENABLED: "true"
       DICOM_WEB_PLUGIN_ENABLED: "true"
+
+      ORTHANC__DICOM_WEB__SERIES_METADATA: "Full"
+      ORTHANC__DICOM_WEB__STUDIES_METADATA: "Full"
+      ORTHANC__DICOM_WEB__METADATA_WORKER_THREADS_COUNT : "4"
     
   mariadb:
       image: mariadb:latest
