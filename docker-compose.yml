@@ -22,6 +22,7 @@ services:
       volumes:
         - ./mysqldb:/var/lib/mysql
         - ./my.cnf:/etc/mysql/my.cnf
+        - ./keyfile:/etc/mysql/encryption/keyfile
       healthcheck:
         test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
         timeout: 20s
