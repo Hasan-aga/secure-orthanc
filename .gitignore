@@ -3,3 +3,4 @@ filedb/
 postgresdb/
 mysqldb/
 encrypted-file
+orthanc_files_db/

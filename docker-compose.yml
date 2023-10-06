@@ -8,7 +8,7 @@ services:
       - "8040:8042"
     volumes:
       - ./orthanc.json:/etc/orthanc/orthanc.json
-      - /mnt/my-encrypted-volume:/var/lib/orthanc/db/
+      - ./orthanc_files_db:/var/lib/orthanc/db/
 
 
   ohif_viewer:
