@@ -9,6 +9,7 @@ services:
     volumes:
       - ./orthanc.json:/etc/orthanc/orthanc.json
       - ./orthanc_files_db:/var/lib/orthanc/db/
+      - ./lua/:/lua/
 
 
   ohif_viewer:

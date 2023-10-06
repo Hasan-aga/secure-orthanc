@@ -44,6 +44,7 @@
   // List of paths to the custom Lua scripts that are to be loaded
   // into this instance of Orthanc
   "LuaScripts" : [
+    "/lua/catch_aet.lua"
   ],
 
   // List of paths to the plugins that are to be loaded into this
