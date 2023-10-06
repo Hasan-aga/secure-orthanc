@@ -1,6 +1,4 @@
-function ReceivedInstanceFilter(dicom, origin, info)
-    print("Lua script triggered")
-    
+function ReceivedInstanceFilter(dicom, origin, info)    
     local path = "/lua/"  -- Change this to your desired path
     
     if origin.RemoteAet ~= nil then
