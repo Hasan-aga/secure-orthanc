@@ -2,3 +2,4 @@ plugins/
 filedb/
 postgresdb/
 mysqldb/
+encrypted-file
