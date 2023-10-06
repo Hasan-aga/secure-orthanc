@@ -3,8 +3,9 @@
 ### 
 docker-compose.yml
 	- create a mariadb container
-	- add new volume for the keyfile
-	- add new volume for mariadb cnf
+	- add new volume for the keyfile ok
+	- add new volume for mariadb cnf ok
+	- the db can be saved via orthanc volume
 	
 ```
   mariadb:
