@@ -297,7 +297,7 @@
 
   // Whether to store the DICOM modalities in the Orthanc database
   // instead of in this configuration file (new in Orthanc 1.5.0)
-  "DicomModalitiesInDatabase" : false,
+  "DicomModalitiesInDatabase" : true,
 
   // Whether the Orthanc SCP allows incoming C-Echo requests, even
   // from SCU modalities it does not know about (i.e. that are not
